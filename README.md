@@ -82,7 +82,7 @@ Raw Excel/CSV Data
 
 ---
 
-## 📂 Project Directory Structure
+''' ## 📂 Project Directory Structure
 data/
 input/ # Raw Excel/CSV files
 output/
@@ -96,7 +96,7 @@ pump_efficiency_curve.py
 system_curve.py
 utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
 
-
+'''
 ---
 
 ## Installation
