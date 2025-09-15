@@ -31,7 +31,7 @@ Raw Excel/CSV Data
 
 ---
 
-## Step Descriptions
+## 📝Step Descriptions
 
 ### Step 1: Actual Head Analysis
 - **Script:** `src/actual_head_curve.py`
@@ -89,7 +89,7 @@ Raw Excel/CSV Data
 
 ---
 
-## Project Directory Structure
+## 📂 Project Directory Structure
 data/
 ├─ input/ # Raw Excel/CSV files
 └─ output/
@@ -140,7 +140,7 @@ python src/pump_efficiency_curve.py
 # Step 4: System Curve
 python src/system_curve.py
 
-Author
+👤Author
 Yongbeen Kim (김용빈)
 Researcher, Intelligent Mechatronics Research Center, KETI
 
