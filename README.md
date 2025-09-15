@@ -80,9 +80,10 @@ Raw Excel/CSV Data
   - System curve plots: `output/plots/system_curve.png`
   - Logs: `output/logs/system_curve_log.txt`
 
+```
 ---
 
-''' ## 📂 Project Directory Structure
+## 📂 Project Directory Structure
 data/
 input/ # Raw Excel/CSV files
 output/
@@ -96,7 +97,7 @@ pump_efficiency_curve.py
 system_curve.py
 utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
 
-'''
+```
 ---
 
 ## Installation
