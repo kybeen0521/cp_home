@@ -80,9 +80,9 @@ Raw Excel/CSV Data
   - System curve plots: `output/plots/system_curve.png`
   - Logs: `output/logs/system_curve_log.txt`
 
-```
----
 
+---
+```
 ## 📂 Project Directory Structure
 data/
 input/ # Raw Excel/CSV files
