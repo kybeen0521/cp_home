@@ -82,8 +82,8 @@ Raw Excel/CSV Data
 
 
 ---
-```
 ## 📂 Project Directory Structure
+```
 data/
 input/ # Raw Excel/CSV files
 output/
