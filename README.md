@@ -101,8 +101,6 @@ utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
 
 ## Installation
 
-```bash
-
 # Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
