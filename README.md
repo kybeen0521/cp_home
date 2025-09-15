@@ -99,33 +99,6 @@ utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
 ```
 ---
 
-## Installation
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-Usage
-
-Run each step independently via Python:
-# Step 1: Actual Head Analysis
-python src/actual_head_curve.py
-
-# Step 2: Shaft Power Curve
-python src/shaft_power_curve.py
-
-# Step 3: Pump Efficiency
-python src/pump_efficiency_curve.py
-
-# Step 4: System Curve
-python src/system_curve.py
-
-
----
 
 ## 👤 Author
 **Yongbeen Kim (김용빈)**  
