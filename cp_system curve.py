@@ -1,13 +1,11 @@
 import logging
 from pathlib import Path
 from typing import Optional
-import tkinter as tk
-from tkinter import filedialog
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from tkinter import Tk, filedialog
 
 
 # Configuration Classes
@@ -102,18 +100,7 @@ def plot_system_curve(Q: pd.Series, H_sys: pd.Series) -> None:
 
 def find_flow_column(df: pd.DataFrame) -> Optional[str]:
     """Automatically find the flow column in the DataFrame."""
-    return next((c for c in df.columns if "Flow" in c or "Q" in c), None)
-
-
-def select_file() -> Optional[Path]:
-    """Open file selection dialog and return the chosen file path."""
-    root = tk.Tk()
-    root.withdraw()  # GUI 창 숨김
-    file_path = filedialog.askopenfilename(
-        title="Select Excel File",
-        filetypes=[("Excel files", "*.xlsx *.xls")]
-    )
-    return Path(file_path) if file_path else None
+    return next((c for c in df.columns if "Flow" in c and "Q" in c), None)
 
 
 # Main Workflow
@@ -122,20 +109,23 @@ def main() -> None:
     fluid = FluidProperties()
 
     try:
-        file_path = select_file()
-        if file_path is None or not file_path.exists():
-            logging.error("❌ No file selected or file does not exist.")
+        # Tkinter File Selection
+        root = Tk()
+        root.withdraw()
+        file_path = filedialog.askopenfilename(
+            title="Select Excel File",
+            filetypes=[("Excel files", "*.xlsx *.xls")]
+        )
+        if not file_path:
+            logging.error("No file selected. Exiting...")
             return
-
-        logging.info(f"✅ File selected: {file_path}")
 
         df = pd.read_excel(file_path)
         df = clean_columns(df)
 
         flow_col = find_flow_column(df)
         if flow_col is None:
-            logging.error("❌ Flow column not found in Excel file!")
-            logging.error(f"Columns available: {list(df.columns)}")
+            logging.error("Flow column not found in Excel file!")
             return
 
         # Convert L/s → m³/s
@@ -153,6 +143,10 @@ def main() -> None:
         # Plot
         plot_system_curve(df["Q_m3s"], df["H_system"])
 
+    except FileNotFoundError as fnf_err:
+        logging.error(f"FileNotFoundError: {fnf_err}")
+    except pd.errors.ExcelFileError as xl_err:
+        logging.error(f"ExcelFileError: {xl_err}")
     except Exception as e:
         logging.exception(f"Unexpected error occurred: {e}")
 
