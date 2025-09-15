@@ -1,9 +1,9 @@
 # Centrifugal Pump Data Analysis Pipeline
 
 ## Overview
-This repository contains a set of Python tools for analyzing pump performance and motor power consumption data,  
+This repository contains a set of Python tools for analyzing pump performance,  
 including **actual head curves**, **shaft power curves**, **pump efficiency curves**, and **system curve calculations**.  
-The pipeline was developed as part of KETI's EEMS (Energy Efficiency Management System) project.  
+The pipeline was developed as part of KETI's **EEMS (Energy Efficiency Management System)** project.  
 
 The workflow is designed for **cleaning raw Excel/CSV data, calculating key performance metrics, and visualizing results**,  
 with automatic logging for reproducibility.
@@ -28,63 +28,65 @@ Raw Excel/CSV Data
 ↓ Step 4: System Curve Analysis → system_curve.py
 ↓ Output: Cleaned Data, Calculated Metrics, Plots, Logs
 
+
 ---
 
 ## 📝 Step Descriptions
 
 ### Step 1: Actual Head Analysis
-- **Script:** `src/actual_head_curve.py`
-- **Input:** Excel file containing `Flow`, `Inlet Pressure`, `Outlet Pressure`, `Inlet/Outlet Velocity`
-- **Process:**
-  - Clean column names
-  - Calculate actual head: `ha = (p2 - p1)/ (ρg) + z_diff + (v2^2 - v1^2)/(2g)`
-  - Detect local increases in head
-  - Plot `Q` vs. `ha` with anomalies highlighted
+- **Script:** `src/actual_head_curve.py`  
+- **Input:** Excel file containing `Flow`, `Inlet Pressure`, `Outlet Pressure`, `Inlet/Outlet Velocity`  
+- **Process:**  
+  - Clean column names  
+  - Calculate actual head:  
+    `ha = (p2 - p1)/(ρg) + z_diff + (v2^2 - v1^2)/(2g)`  
+  - Detect local increases in head  
+  - Plot `Q` vs `ha` with anomalies highlighted  
 - **Output:**  
-  - Plots: `output/plots/*.png`
-  - Logs: `output/logs/actual_head_log.txt`
+  - Plots: `output/plots/*.png`  
+  - Logs: `output/logs/actual_head_log.txt`  
 
 ---
 
 ### Step 2: Shaft Power Calculation
-- **Script:** `src/shaft_power_curve.py`
-- **Input:** Excel file with `Torque` and `RPM`
-- **Process:**
-  - Compute angular velocity: `ω = RPM * π / 30`
-  - Calculate shaft power: `W_shaft = Torque * ω`
-  - Sort by flow rate
+- **Script:** `src/shaft_power_curve.py`  
+- **Input:** Excel file with `Torque` and `RPM`  
+- **Process:**  
+  - Compute angular velocity: `ω = RPM * π / 30`  
+  - Calculate shaft power: `W_shaft = Torque * ω`  
+  - Sort by flow rate  
 - **Output:**  
-  - Shaft power plots: `output/plots/*.png`
-  - Logs: `output/logs/shaft_power_log.txt`
+  - Shaft power plots: `output/plots/*.png`  
+  - Logs: `output/logs/shaft_power_log.txt`  
 
 ---
 
 ### Step 3: Pump Efficiency Analysis
-- **Script:** `src/pump_efficiency_curve.py`
-- **Input:** Excel file with `Torque`, `RPM`, `Flow`, `Inlet/Outlet Pressure`, `Inlet/Outlet Velocity`
-- **Process:**
-  - Compute hydraulic power: `W_hydraulic = ρ * g * Q * ha`
-  - Compute shaft power
-  - Efficiency: `η = W_hydraulic / W_shaft * 100`
-  - Plot efficiency vs. flow rate and highlight maximum efficiency
+- **Script:** `src/pump_efficiency_curve.py`  
+- **Input:** Excel file with `Torque`, `RPM`, `Flow`, `Inlet/Outlet Pressure`, `Inlet/Outlet Velocity`  
+- **Process:**  
+  - Compute hydraulic power: `W_hydraulic = ρ * g * Q * ha`  
+  - Compute shaft power  
+  - Efficiency: `η = W_hydraulic / W_shaft * 100`  
+  - Plot efficiency vs flow rate and highlight maximum efficiency  
 - **Output:**  
-  - Efficiency plots: `output/plots/*.png`
-  - Logs: `output/logs/efficiency_log.txt`
+  - Efficiency plots: `output/plots/*.png`  
+  - Logs: `output/logs/efficiency_log.txt`  
 
 ---
 
 ### Step 4: Pipe System Curve Calculation
-- **Script:** `src/system_curve.py`
-- **Input:** Excel file with `Flow` rate data
-- **Process:**
-  - Calculate velocity: `V = 4 * Q / (π * D^2)`
-  - Compute Reynolds number: `Re = ρ * V * D / μ`
-  - Determine Darcy friction factor (laminar/Haaland)
-  - Compute system head: `H_system = Z_DIFF + ((f*L/D + ΣKL)/(2*g*A^2)) * Q^2`
-  - Plot system curve
+- **Script:** `src/system_curve.py`  
+- **Input:** Excel file with `Flow` rate data  
+- **Process:**  
+  - Calculate velocity: `V = 4 * Q / (π * D^2)`  
+  - Compute Reynolds number: `Re = ρ * V * D / μ`  
+  - Determine Darcy friction factor (laminar/Haaland)  
+  - Compute system head: `H_system = Z_DIFF + ((f*L/D + ΣKL)/(2*g*A^2)) * Q^2`  
+  - Plot system curve  
 - **Output:**  
-  - System curve plots: `output/plots/system_curve.png`
-  - Logs: `output/logs/system_curve_log.txt`
+  - System curve plots: `output/plots/system_curve.png`  
+  - Logs: `output/logs/system_curve_log.txt`  
 
 ---
 
@@ -101,6 +103,7 @@ src/
 ├─ pump_efficiency_curve.py
 ├─ system_curve.py
 └─ utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
+
 
 ---
 
@@ -120,7 +123,6 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 
 Recommended Packages:
-
 pandas, numpy, matplotlib, seaborn, adjustText, openpyxl, tkinter
 
 Usage
@@ -138,10 +140,8 @@ python src/pump_efficiency_curve.py
 # Step 4: System Curve
 python src/system_curve.py
 
+👤Author
 
----
-
-## 👤Author
 Yongbeen Kim (김용빈)
 Researcher, Intelligent Mechatronics Research Center, KETI
 
