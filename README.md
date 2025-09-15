@@ -1,4 +1,4 @@
-# Pump & Motor Data Analysis Pipeline
+# Centrifugal Pump Data Analysis Pipeline
 
 ## Overview
 This repository contains a set of Python tools for analyzing pump performance and motor power consumption data,  
@@ -102,7 +102,6 @@ src/
 ├─ system_curve.py
 └─ utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
 
-
 ---
 
 ## Installation
@@ -138,6 +137,7 @@ python src/pump_efficiency_curve.py
 
 # Step 4: System Curve
 python src/system_curve.py
+
 
 ---
 
