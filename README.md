@@ -127,7 +127,7 @@ python src/system_curve.py
 
 ---
 
-👤Author
+#👤Author
 
 Yongbeen Kim (김용빈)
 Researcher, Intelligent Mechatronics Research Center, KETI
