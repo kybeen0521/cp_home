@@ -1,7 +1,7 @@
 # Centrifugal Pump Data Analysis Pipeline
 
 ## Overview
-This repository contains a set of Python tools for analyzing pump performance,  
+This repository contains a set of Python tools for analyzing centrifugal pump performance,  
 including **actual head curves**, **shaft power curves**, **pump efficiency curves**, and **system curve calculations**.  
 The pipeline was developed as part of practice project.  
 
