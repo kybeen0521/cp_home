@@ -8,6 +8,8 @@ The pipeline was developed as part of practice project.
 The workflow is designed for **cleaning raw Excel/CSV data, calculating key performance metrics, and visualizing results**,  
 with automatic logging for reproducibility.
 
+
+📑 For more details, please refer to CP report_KimYongBeen
 ---
 
 ## Features
