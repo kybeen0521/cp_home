@@ -102,9 +102,6 @@ utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
 ## Installation
 
 ```bash
-# Clone repository
-git clone https://github.com/<user>/<repo>.git
-cd <repo>
 
 # Create virtual environment
 python -m venv venv
@@ -129,7 +126,7 @@ python src/pump_efficiency_curve.py
 # Step 4: System Curve
 python src/system_curve.py
 
-👤Author
+##👤Author
 
 Yongbeen Kim (김용빈)
 Researcher, Intelligent Mechatronics Research Center, KETI
