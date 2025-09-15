@@ -3,7 +3,7 @@
 ## Overview
 This repository contains a set of Python tools for analyzing pump performance,  
 including **actual head curves**, **shaft power curves**, **pump efficiency curves**, and **system curve calculations**.  
-The pipeline was developed as part of KETI's EEMS (Energy Efficiency Management System) project.  
+The pipeline was developed as part of practice project.  
 
 The workflow is designed for **cleaning raw Excel/CSV data, calculating key performance metrics, and visualizing results**,  
 with automatic logging for reproducibility.
