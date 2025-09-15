@@ -9,7 +9,7 @@ The workflow is designed for **cleaning raw Excel/CSV data, calculating key perf
 with automatic logging for reproducibility.
 
 
-📑 For more details, please refer to 'CP report_KimYongBeen'
+📑 For more details, please refer to (docs/CP%20report_KimYongBeen.pdf)
 ---
 
 ## Features
