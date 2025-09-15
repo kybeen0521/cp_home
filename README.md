@@ -28,10 +28,9 @@ Raw Excel/CSV Data
 ↓ Step 4: System Curve Analysis → system_curve.py
 ↓ Output: Cleaned Data, Calculated Metrics, Plots, Logs
 
-
 ---
 
-## 📝Step Descriptions
+## 📝 Step Descriptions
 
 ### Step 1: Actual Head Analysis
 - **Script:** `src/actual_head_curve.py`
@@ -140,6 +139,7 @@ python src/pump_efficiency_curve.py
 # Step 4: System Curve
 python src/system_curve.py
 
+---
 👤Author
 Yongbeen Kim (김용빈)
 Researcher, Intelligent Mechatronics Research Center, KETI
