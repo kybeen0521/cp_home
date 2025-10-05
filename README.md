@@ -103,7 +103,7 @@ utils/ # Helper functions (clean_columns.py, calc_utils.py, etc.)
 
 
 ## 👤 Author
-**Yongbeen Kim (김용빈)**  
+**Yongbeen Kim**  
 Researcher, Intelligent Mechatronics Research Center, KETI
 
 
